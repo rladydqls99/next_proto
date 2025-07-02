@@ -1,0 +1,28 @@
+# Build output
+dist
+
+# Node modules
+node_modules
+
+# Editor directories and files
+.vscode
+.idea
+.DS_Store
+
+# Lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# prettier
+.prettierrc.json
+
+# Config files that should keep their formatting
+package.json
+tsconfig.json
+tsconfig.app.json
+tsconfig.node.json
+
+# Misc
+.git
+.gitignore
