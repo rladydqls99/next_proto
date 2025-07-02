@@ -13,7 +13,12 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  ...compat.extends(
+    "next/core-web-vitals",
+    "next/typescript",
+    "plugin:prettier/recommended",
+    "prettier"
+  ),
 
   {
     rules: {
@@ -61,12 +66,7 @@ function publicApiRestrictionRules() {
       {
         patterns: [
           {
-            group: [
-              "@/shared/**",
-              "@/domains/*/**",
-              "@/widgets/*/**",
-              "@/pages/*/**",
-            ],
+            group: ["@/shared/**", "@/domains/*/**", "@/widgets/*/**", "@/pages/*/**"],
             message: "index.ts를 통해 import하세요.",
           },
         ],
@@ -138,7 +138,7 @@ function importOrderRules() {
 function getDomainFolders() {
   const domainsPath = join(__dirname, "src", "domains");
   try {
-    return readdirSync(domainsPath).filter((item) => {
+    return readdirSync(domainsPath).filter(item => {
       const itemPath = join(domainsPath, item);
       return statSync(itemPath).isDirectory();
     });
@@ -151,7 +151,7 @@ function getDomainFolders() {
 // 도메인 간 import 제한 규칙 생성
 function createDomainRestrictionRules() {
   const domains = getDomainFolders();
-  return domains.map((domain) => ({
+  return domains.map(domain => ({
     target: `./src/domains/${domain}/**/*`,
     from: `./src/domains/!(${domain})/**/*`,
     message: `도메인 간의 직접적인 import는 금지됩니다.`,
