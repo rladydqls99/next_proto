@@ -40,16 +40,56 @@ function importRestrictionRules() {
       "error",
       {
         zones: [
-          { target: "./src/pages", from: "./src/app" },
-          { target: "./src/widgets", from: "./src/app" },
-          { target: "./src/widgets", from: "./src/pages" },
-          { target: "./src/domains", from: "./src/app" },
-          { target: "./src/domains", from: "./src/pages" },
-          { target: "./src/domains", from: "./src/widgets" },
-          { target: "./src/shared", from: "./src/app" },
-          { target: "./src/shared", from: "./src/pages" },
-          { target: "./src/shared", from: "./src/widgets" },
-          { target: "./src/shared", from: "./src/domains" },
+          {
+            target: "./src/pages",
+            from: "./src/app",
+            message: "pages 레이어는 app 레이어를 참조할 수 없습니다.",
+          },
+          {
+            target: "./src/widgets",
+            from: "./src/app",
+            message: "widgets 레이어는 app 레이어를 참조할 수 없습니다.",
+          },
+          {
+            target: "./src/widgets",
+            from: "./src/pages",
+            message: "widgets 레이어는 pages 레이어를 참조할 수 없습니다.",
+          },
+          {
+            target: "./src/domains",
+            from: "./src/app",
+            message: "domains 레이어는 app 레이어를 참조할 수 없습니다.",
+          },
+          {
+            target: "./src/domains",
+            from: "./src/pages",
+            message: "domains 레이어는 pages 레이어를 참조할 수 없습니다.",
+          },
+          {
+            target: "./src/domains",
+            from: "./src/widgets",
+            message: "domains 레이어는 widgets 레이어를 참조할 수 없습니다.",
+          },
+          {
+            target: "./src/shared",
+            from: "./src/app",
+            message: "shared 레이어는 app 레이어를 참조할 수 없습니다.",
+          },
+          {
+            target: "./src/shared",
+            from: "./src/pages",
+            message: "shared 레이어는 pages 레이어를 참조할 수 없습니다.",
+          },
+          {
+            target: "./src/shared",
+            from: "./src/widgets",
+            message: "shared 레이어는 widgets 레이어를 참조할 수 없습니다.",
+          },
+          {
+            target: "./src/shared",
+            from: "./src/domains",
+            message: "shared 레이어는 domains 레이어를 참조할 수 없습니다.",
+          },
           // 도메인 간 import 제한 규칙 (자동 생성)
           ...createDomainRestrictionRules(),
         ],
@@ -148,12 +188,12 @@ function getDomainFolders() {
   }
 }
 
-// 도메인 간 import 제한 규칙 생성
+// 도메인 간 참조 제한 규칙 생성
 function createDomainRestrictionRules() {
   const domains = getDomainFolders();
   return domains.map(domain => ({
     target: `./src/domains/${domain}/**/*`,
     from: `./src/domains/!(${domain})/**/*`,
-    message: `도메인 간의 직접적인 import는 금지됩니다.`,
+    message: `도메인 간의 직접적인 참조는 금지됩니다.`,
   }));
 }
