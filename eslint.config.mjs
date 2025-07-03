@@ -22,6 +22,7 @@ const eslintConfig = [
 
   {
     rules: {
+      "prettier/prettier": "warn",
       ...importRestrictionRules(),
       ...publicApiRestrictionRules(),
       ...importOrderRules(),
