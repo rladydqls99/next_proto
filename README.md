@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js 관리자 대시보드 프로토타입
 
-## Getting Started
+Feature-Sliced Design과 도메인 중심 아키텍처를 결합한 현대적인 Next.js 관리자 대시보드 프로젝트입니다.
 
-First, run the development server:
+## 🚀 기술 스택
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **프레임워크**: Next.js 15.3.4 (App Router)
+- **언어**: TypeScript 5
+- **스타일링**: Tailwind CSS 4
+- **폰트**: Geist Sans & Geist Mono
+- **패키지 매니저**: pnpm
+- **코드 품질**: ESLint + Prettier + Husky
+
+## 📁 프로젝트 아키텍처
+
+```
+src/
+├── app/ # 라우팅 및 전역 설정
+│   ├── (pages)/                  # 페이지 그룹
+│   │   └── page-name/
+│   │       ├── layout.tsx        # 루트 레이아웃
+│   │       └── page.tsx          # 페이지
+│   └── styles/                   # 전역 스타일
+│           └── globals.css
+├── pages/                        # 페이지별 UI 컴포넌트 및 hooks
+├── widgets/                      # 재사용 가능한 복합 컴포넌트
+├── domains/                      # 도메인별 로직
+└── shared/                       # 공통 유틸리티 및 컴포넌트
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ 개발 환경 설정
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 필수 요구사항
+- Node.js 18+
+- pnpm 8+
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 설치 및 실행
 
-## Learn More
+```bash
+# 의존성 설치
+pnpm install
 
-To learn more about Next.js, take a look at the following resources:
+# 개발 서버 실행 (Turbopack 사용)
+pnpm dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# 프로덕션 빌드
+pnpm build
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# 프로덕션 서버 실행
+pnpm start
+```
 
-## Deploy on Vercel
+### 코드 품질 관리
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+# ESLint 검사
+pnpm lint
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Prettier 포맷팅
+pnpm format
+
+# 포맷팅 검사
+pnpm format:check
+```
+
+## 🚦 시작하기
+
+1. 프로젝트 클론
+2. `pnpm install`로 의존성 설치
+3. `pnpm dev`로 개발 서버 실행
+4. `http://localhost:3000`에서 확인
