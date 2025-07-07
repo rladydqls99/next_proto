@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { PrimaryButton } from "@/shared";
 
-const Header = () => {
+const GlobalHeader = () => {
   return (
     <div className="border-muted flex items-center justify-between border-b-2 px-10 py-5">
       <Link
@@ -22,4 +22,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default GlobalHeader;

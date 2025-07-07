@@ -1,4 +1,4 @@
-import { Header } from "@/widgets/headers";
+import { GlobalHeader } from "@/widgets/headers";
 import { SideNav } from "@/widgets/side-nav";
 
 const AdminLayout = ({
@@ -8,10 +8,10 @@ const AdminLayout = ({
 }>) => {
   return (
     <div className="flex min-h-screen flex-col">
-      <Header />
+      <GlobalHeader />
       <div className="flex flex-1">
         <SideNav />
-        {children}
+        <div className="w-full p-6">{children}</div>
       </div>
     </div>
   );

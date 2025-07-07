@@ -3,7 +3,7 @@ import { Accordion } from "radix-ui";
 
 import Link from "next/link";
 
-import { navItems } from "./config/nav.config";
+import { navItems } from "@/shared";
 
 const SideNav = () => {
   return (

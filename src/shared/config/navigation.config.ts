@@ -1,38 +1,34 @@
-import { LucideIcon, MonitorSmartphoneIcon, NewspaperIcon, ScanSearchIcon } from "lucide-react";
+import { MonitorSmartphoneIcon, NewspaperIcon, ScanSearchIcon } from "lucide-react";
 
-type NavItem = {
-  key: string;
-  title: string;
-  icon: LucideIcon;
-  disabled: boolean;
-  children: {
-    key: string;
-    title: string;
-    href: string;
-  }[];
+import { NavItem } from "@/shared";
+
+export const ROUTE_PATH = {
+  MANAGEMENT: "/management",
+  COMMON: "/common",
+  SITE: "/site",
 };
 
 export const navItems: NavItem[] = [
   {
-    key: "management",
+    key: ROUTE_PATH.MANAGEMENT,
     title: "관리 프로그램",
     icon: MonitorSmartphoneIcon,
     disabled: false,
     children: [
       {
-        key: "group",
+        key: `${ROUTE_PATH.MANAGEMENT}/groups`,
         title: "그룹",
-        href: "/groups",
+        href: `${ROUTE_PATH.MANAGEMENT}/groups`,
       },
       {
-        key: "group-member",
+        key: `${ROUTE_PATH.MANAGEMENT}/group-members`,
         title: "그룹 회원",
-        href: "/group-members",
+        href: `${ROUTE_PATH.MANAGEMENT}/group-members`,
       },
     ],
   },
   {
-    key: "common",
+    key: ROUTE_PATH.COMMON,
     title: "공통 프로그램",
     icon: NewspaperIcon,
     disabled: false,
@@ -40,17 +36,17 @@ export const navItems: NavItem[] = [
       {
         key: "code",
         title: "공통 코드",
-        href: "/admin/common/code",
+        href: `${ROUTE_PATH.COMMON}/code`,
       },
       {
         key: "settings",
         title: "시스템 설정",
-        href: "/admin/common/settings",
+        href: `${ROUTE_PATH.COMMON}/settings`,
       },
     ],
   },
   {
-    key: "site",
+    key: ROUTE_PATH.SITE,
     title: "사이트 관리",
     icon: ScanSearchIcon,
     disabled: true,
@@ -58,17 +54,12 @@ export const navItems: NavItem[] = [
       {
         key: "pages",
         title: "페이지 관리",
-        href: "/admin/site/pages",
+        href: `${ROUTE_PATH.SITE}/pages`,
       },
       {
         key: "menu",
         title: "메뉴 관리",
-        href: "/admin/site/menu",
-      },
-      {
-        key: "banner",
-        title: "배너 관리",
-        href: "/admin/site/banner",
+        href: `${ROUTE_PATH.SITE}/menu`,
       },
     ],
   },
