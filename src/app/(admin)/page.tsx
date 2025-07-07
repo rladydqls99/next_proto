@@ -1,3 +1,5 @@
+import { Button, DestructiveButton, PrimaryButton, SecondaryButton } from "@/shared";
+
 const Home = () => {
   return (
     <div className="">
@@ -10,18 +12,22 @@ const Home = () => {
       <h1 className="text-4xl font-bold">hello world</h1>
       <h1 className="text-4xl font-extrabold">hello world</h1>
       <h1 className="text-4xl font-black">hello world</h1>
-      <button className="bg-primary hover:bg-primary-hover active:bg-primary-active text-primary-foreground px-4 py-2">
-        Primary 버튼
-      </button>
-      <button className="bg-secondary hover:bg-secondary-hover active:bg-secondary-active text-secondary-foreground px-4 py-2">
-        Secondary 버튼
-      </button>
-      <button className="bg-destructive hover:bg-destructive-hover active:bg-destructive-active text-destructive-foreground px-4 py-2">
-        Destructive 버튼
-      </button>
-      <button className="bg-muted hover:bg-muted-hover active:bg-muted-active text-muted-foreground px-4 py-2">
-        Muted 버튼
-      </button>
+      <Button size="xs" loading>
+        click me
+      </Button>
+      <Button size="sm">click me</Button>
+      <Button size="md">click me</Button>
+      <Button size="lg">click me</Button>
+      <PrimaryButton>click me</PrimaryButton>
+      <PrimaryButton variant="outline">click me</PrimaryButton>
+      <PrimaryButton variant="link">click me</PrimaryButton>
+      <SecondaryButton>click me</SecondaryButton>
+      <SecondaryButton variant="outline">click me</SecondaryButton>
+      <SecondaryButton variant="link">click me</SecondaryButton>
+      <DestructiveButton>click me</DestructiveButton>
+      <DestructiveButton variant="outline">click me</DestructiveButton>
+      <DestructiveButton variant="link">click me</DestructiveButton>
+      <DestructiveButton variant="link">click me</DestructiveButton>
     </div>
   );
 };
