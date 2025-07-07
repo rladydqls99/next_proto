@@ -27,7 +27,9 @@ const Home = () => {
       <DestructiveButton>click me</DestructiveButton>
       <DestructiveButton variant="outline">click me</DestructiveButton>
       <DestructiveButton variant="link">click me</DestructiveButton>
-      <DestructiveButton variant="link">click me</DestructiveButton>
+      <DestructiveButton loading variant="link">
+        click measd
+      </DestructiveButton>
     </div>
   );
 };

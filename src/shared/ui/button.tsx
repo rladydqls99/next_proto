@@ -39,14 +39,13 @@ const Button = ({
     sizeMap[size],
     roundedMap[rounded],
     className,
-    loading ? "opacity-50 cursor-not-allowed" : "cursor-pointer",
-    disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer"
+    loading || disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer"
   );
 
   const buttonContent = loading ? "loading..." : children;
 
   return (
-    <button {...props} className={buttonClassName} disabled={disabled}>
+    <button {...props} className={buttonClassName} disabled={disabled || loading}>
       {buttonContent}
     </button>
   );
