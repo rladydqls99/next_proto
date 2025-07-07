@@ -15,12 +15,15 @@ const SideNav = () => {
         <Accordion.Item key={item.key} value={item.key}>
           <Accordion.Header>
             <Accordion.Trigger
-              className="flex w-full cursor-pointer items-center gap-2 hover:text-indigo-100 disabled:cursor-not-allowed disabled:text-white disabled:opacity-50"
+              className="group flex w-full cursor-pointer items-center gap-2 hover:text-indigo-100 disabled:cursor-not-allowed disabled:text-white disabled:opacity-50"
               disabled={item.disabled}
             >
               <item.icon className="h-5 w-5" />
               <span>{item.title}</span>
-              <ChevronDownIcon className="ml-auto" />
+              <ChevronDownIcon
+                aria-hidden
+                className="ml-auto transition-transform duration-300 ease-out group-data-[state=open]:rotate-180"
+              />
             </Accordion.Trigger>
           </Accordion.Header>
           <Accordion.Content className="overflow-hidden data-[state=closed]:animate-[accordion-up_300ms_ease-out] data-[state=open]:animate-[accordion-down_300ms_ease-out]">

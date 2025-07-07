@@ -22,12 +22,12 @@ export const navItems: NavItem[] = [
       {
         key: "group",
         title: "그룹",
-        href: "/admin/management/group",
+        href: "/groups",
       },
       {
         key: "group-member",
         title: "그룹 회원",
-        href: "/admin/management/group-member",
+        href: "/group-members",
       },
     ],
   },
