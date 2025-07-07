@@ -9,7 +9,7 @@ const AdminLayout = ({
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
-      <div className="flex">
+      <div className="flex flex-1">
         <SideNav />
         {children}
       </div>
