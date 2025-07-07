@@ -1,7 +1,15 @@
 export default function Home() {
   return (
-    <div className="grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 font-[family-name:var(--font-geist-sans)] sm:p-20">
-      Initial Page
+    <div className="">
+      <h1 className="text-4xl font-thin">hello world</h1>
+      <h1 className="text-4xl font-extralight">hello world</h1>
+      <h1 className="text-4xl font-light">hello world</h1>
+      <h1 className="text-4xl font-normal">hello world</h1>
+      <h1 className="text-4xl font-medium">hello world</h1>
+      <h1 className="text-4xl font-semibold">hello world</h1>
+      <h1 className="text-4xl font-bold">hello world</h1>
+      <h1 className="text-4xl font-extrabold">hello world</h1>
+      <h1 className="text-4xl font-black">hello world</h1>
     </div>
   );
 }
