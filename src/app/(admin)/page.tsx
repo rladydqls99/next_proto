@@ -1,37 +1,13 @@
-import { Button, DestructiveButton, PrimaryButton, SecondaryButton } from "@/shared";
-
-const Home = () => {
+const RootPage = () => {
   return (
-    <div className="">
-      <h1 className="text-4xl font-thin">hello world</h1>
-      <h1 className="text-4xl font-extralight">hello world</h1>
-      <h1 className="text-4xl font-light">hello world</h1>
-      <h1 className="text-4xl font-normal">hello world</h1>
-      <h1 className="text-4xl font-medium">hello world</h1>
-      <h1 className="text-4xl font-semibold">hello world</h1>
-      <h1 className="text-4xl font-bold">hello world</h1>
-      <h1 className="text-4xl font-extrabold">hello world</h1>
-      <h1 className="text-4xl font-black">hello world</h1>
-      <Button size="xs" loading>
-        click me
-      </Button>
-      <Button size="sm">click me</Button>
-      <Button size="md">click me</Button>
-      <Button size="lg">click me</Button>
-      <PrimaryButton>click me</PrimaryButton>
-      <PrimaryButton variant="outline">click me</PrimaryButton>
-      <PrimaryButton variant="link">click me</PrimaryButton>
-      <SecondaryButton>click me</SecondaryButton>
-      <SecondaryButton variant="outline">click me</SecondaryButton>
-      <SecondaryButton variant="link">click me</SecondaryButton>
-      <DestructiveButton>click me</DestructiveButton>
-      <DestructiveButton variant="outline">click me</DestructiveButton>
-      <DestructiveButton variant="link">click me</DestructiveButton>
-      <DestructiveButton loading variant="link">
-        click measd
-      </DestructiveButton>
+    <div className="w-full">
+      <div className="flex h-full items-center justify-center">
+        <h1 className="from-primary via-secondary to-primary animate-gradient-x bg-gradient-to-r bg-[length:200%_100%] bg-clip-text text-5xl font-bold text-transparent">
+          PCMS v3
+        </h1>
+      </div>
     </div>
   );
 };
 
-export default Home;
+export default RootPage;
