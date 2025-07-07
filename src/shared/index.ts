@@ -4,5 +4,6 @@ export { getNavItemByUrl, type NavItem, type NavItemInfo } from "./lib/navigatio
 export { Button, PrimaryButton, SecondaryButton, DestructiveButton } from "./ui/button";
 
 export { ROUTE_PATH, navItems } from "./config/navigation.config";
+export { BASE_URL, ENDPOINT } from "./config/endpoint.config";
 
 export { type YesOrNo } from "./model/common.type";

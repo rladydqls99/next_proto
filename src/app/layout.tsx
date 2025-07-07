@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 
 import "./styles/globals.css";
+import MswProvider from "./providers/msw-provider";
+import QueryClientProvider from "./providers/query-client-provider";
 import { pretendard } from "./styles/font";
 
 export const metadata: Metadata = {
@@ -15,7 +17,11 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="ko" className={`${pretendard.variable} antialiased`}>
-      <body>{children}</body>
+      <body>
+        <MswProvider>
+          <QueryClientProvider>{children}</QueryClientProvider>
+        </MswProvider>
+      </body>
     </html>
   );
 };
