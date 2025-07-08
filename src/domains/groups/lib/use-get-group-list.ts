@@ -2,7 +2,7 @@ import { keepPreviousData, useQuery } from "@tanstack/react-query";
 
 import { apiClient, ENDPOINT, ResponseType } from "@/shared";
 
-import { Group } from "../model/groups.types";
+import { Group } from "../model/groups-types";
 
 export const useGetGroupList = (search: string) => {
   return useQuery({
