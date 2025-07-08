@@ -2,8 +2,10 @@ import { http, HttpResponse } from "msw";
 
 import { ENDPOINT } from "@/shared";
 
+const BASE_URL = "http://localhost:3000";
+
 export const handlers = [
-  http.get(ENDPOINT.GROUP.list, () => {
+  http.get(`${BASE_URL}${ENDPOINT.GROUP.list}`, () => {
     console.log("ENDPOINT.GROUP.list");
     return HttpResponse.json({
       success: true,

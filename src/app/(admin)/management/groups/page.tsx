@@ -2,7 +2,7 @@ import { dehydrate, HydrationBoundary, QueryClient } from "@tanstack/react-query
 
 import { PageHeader } from "@/widgets/headers";
 
-import { ENDPOINT, getNavItemByUrl, navItems, ROUTE_PATH } from "@/shared";
+import { apiClient, ENDPOINT, getNavItemByUrl, navItems, ROUTE_PATH } from "@/shared";
 
 export const metadata = {
   title: "그룹 관리",
@@ -14,8 +14,7 @@ const GroupsPage = async () => {
 
   await queryClient.prefetchQuery({
     queryKey: [ENDPOINT.GROUP.list],
-    queryFn: () => fetch(ENDPOINT.GROUP.list, { next: { revalidate: 5 } }).then(res => res.json()),
-    staleTime: 1000 * 60 * 5,
+    queryFn: () => apiClient.get(ENDPOINT.GROUP.list),
   });
 
   const navItem = getNavItemByUrl(`${ROUTE_PATH.MANAGEMENT}/groups`, navItems);
