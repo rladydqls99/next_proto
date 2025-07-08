@@ -11,7 +11,7 @@ describe("input 컴포넌트 단위 테스트", () => {
     expect(input).toHaveClass("px-4", "py-2", "text-md", "rounded-md");
     expect(input).toHaveClass(
       "bg-gray-100",
-      "focus:outline-primary",
+      "focus:outline-gray-300",
       "ring-1",
       "ring-gray-200",
       "hover:ring-gray-300"

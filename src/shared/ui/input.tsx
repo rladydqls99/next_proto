@@ -25,7 +25,7 @@ const Input = ({ size = "md", rounded = "md", className, disabled, ...props }: P
   };
 
   const defaultClassName =
-    "bg-gray-100 focus:outline-primary ring-1 ring-gray-200 hover:ring-gray-300";
+    "bg-gray-100 focus:outline-gray-300 ring-1 ring-gray-200 hover:ring-gray-300";
   const inputClassName = cn(
     defaultClassName,
     sizeMap[size],

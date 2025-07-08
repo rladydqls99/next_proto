@@ -20,7 +20,7 @@ const MswProvider = ({ children }: { children: React.ReactNode }) => {
   }, [isReady]);
 
   if (!isReady) {
-    return <div>Loading...</div>;
+    return <div>MSW Loading...</div>;
   }
 
   return children;

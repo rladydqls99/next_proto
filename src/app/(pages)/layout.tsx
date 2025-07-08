@@ -11,7 +11,7 @@ const AdminLayout = ({
       <GlobalHeader />
       <div className="flex flex-1">
         <SideNav />
-        <div className="w-full p-6">{children}</div>
+        <div className="w-full bg-gray-100 p-6">{children}</div>
       </div>
     </div>
   );
