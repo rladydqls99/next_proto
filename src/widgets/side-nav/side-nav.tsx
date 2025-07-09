@@ -1,5 +1,5 @@
+import * as Accordion from "@radix-ui/react-accordion";
 import { ChevronDownIcon } from "lucide-react";
-import { Accordion } from "radix-ui";
 
 import Link from "next/link";
 

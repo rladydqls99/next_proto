@@ -26,8 +26,11 @@ const Input = ({ size = "md", rounded = "md", className, disabled, ...props }: P
 
   const defaultClassName =
     "bg-gray-100 focus:outline-gray-300 ring-1 ring-gray-200 hover:ring-gray-300";
+  const invalidClassName = "aria-invalid:ring-destructive/70 aria-invalid:bg-white";
+
   const inputClassName = cn(
     defaultClassName,
+    invalidClassName,
     sizeMap[size],
     roundedMap[rounded],
     disabled ? "opacity-50 cursor-not-allowed" : "",

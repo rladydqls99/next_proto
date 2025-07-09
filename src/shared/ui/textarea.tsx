@@ -27,9 +27,11 @@ const Textarea = ({ size = "md", rounded = "md", className, disabled, ...props }
 
   const defaultClassName =
     "bg-gray-100 focus:outline-gray-300 ring-1 ring-gray-200 hover:ring-gray-300 resize-none field-sizing-content";
+  const invalidClassName = "aria-invalid:ring-destructive/70 aria-invalid:bg-white";
 
   const textareaClassName = cn(
     defaultClassName,
+    invalidClassName,
     sizeMap[size],
     roundedMap[rounded],
     disabled ? "opacity-50 cursor-not-allowed" : "",

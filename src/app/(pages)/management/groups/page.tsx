@@ -14,8 +14,8 @@ const GroupsPage = async () => {
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
-    queryKey: [ENDPOINT.GROUP.list, ""],
-    queryFn: () => apiClient.get(ENDPOINT.GROUP.list),
+    queryKey: [ENDPOINT.GROUP.LIST, ""],
+    queryFn: () => apiClient.get(ENDPOINT.GROUP.LIST),
   });
 
   const navItem = getNavItemByUrl(`${ROUTE_PATH.MANAGEMENT}/groups`, navItems);

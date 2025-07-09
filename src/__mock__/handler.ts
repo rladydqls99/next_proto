@@ -1,11 +1,13 @@
 import { http, HttpResponse } from "msw";
 
+import { Group } from "@/domains/groups";
+
 import { ENDPOINT } from "@/shared";
 
 const BASE_URL = "http://localhost:3000";
 
 export const handlers = [
-  http.get(`${BASE_URL}${ENDPOINT.GROUP.list}`, async ({ request }) => {
+  http.get(`${BASE_URL}${ENDPOINT.GROUP.LIST}`, async ({ request }) => {
     const url = new URL(request.url);
     const search = url.searchParams.get("search");
     console.log("ENDPOINT.GROUP.list");
@@ -18,9 +20,26 @@ export const handlers = [
       error: null,
     });
   }),
+
+  http.post(`${BASE_URL}${ENDPOINT.GROUP.CREATE}`, async ({ request }) => {
+    const group = (await request.json()) as Group;
+
+    const newGroup = {
+      ...group,
+      memberCount: 0,
+    };
+
+    groupData.push(newGroup);
+
+    return HttpResponse.json({
+      success: true,
+      data: newGroup,
+      error: null,
+    });
+  }),
 ];
 
-const groupData = [
+const groupData: Group[] = [
   { groupCode: "G100", groupName: "전체", description: "전체 그룹", memberCount: 100 },
   {
     groupCode: "G101",

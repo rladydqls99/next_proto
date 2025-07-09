@@ -1,6 +1,7 @@
 export const ENDPOINT = {
   GROUP: {
-    list: `/api/groups`,
+    LIST: `/api/groups`,
+    CREATE: `/api/group`,
   },
 
   GROUP_MEMBER: {

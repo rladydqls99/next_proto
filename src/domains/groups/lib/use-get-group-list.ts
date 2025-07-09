@@ -6,7 +6,7 @@ import { apiGetGroupList } from "../api/groups-api";
 
 export const useGetGroupList = (search: string) => {
   return useQuery({
-    queryKey: [ENDPOINT.GROUP.list, search],
+    queryKey: [ENDPOINT.GROUP.LIST, search],
     queryFn: () => apiGetGroupList(search),
     placeholderData: keepPreviousData,
   });

@@ -1,9 +1,11 @@
-import { DestructiveButton, PrimaryButton, SecondaryButton } from "@/shared";
+import { DestructiveButton, SecondaryButton } from "@/shared";
+
+import CreateGroupDialogWithButton from "./create-group-dialog-with-button";
 
 const GroupTableActions = () => {
   return (
     <div className="flex gap-2">
-      <PrimaryButton size="sm">등록</PrimaryButton>
+      <CreateGroupDialogWithButton />
       <SecondaryButton size="sm">Excel</SecondaryButton>
       <DestructiveButton size="sm">일괄 등록</DestructiveButton>
     </div>
