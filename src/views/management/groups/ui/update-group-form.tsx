@@ -1,29 +1,40 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { FieldErrors, useForm } from "react-hook-form";
+import { toast } from "sonner";
 
 import {
-  createGroupDefaultValue,
-  createGroupSchema,
-  CreateGroupSchema,
-  useCreateGroup,
+  genertateUpdateGroupValue,
+  Group,
+  updateGroupSchema,
+  UpdateGroupSchema,
+  useUpdateGroup,
 } from "@/domains/groups";
 
 import { Form, PrimaryButton, RHFInput, RHFTextarea } from "@/shared";
 
 type PropsType = {
+  group: Group;
   onSuccess: () => void;
 };
-const CreateGroupForm = ({ onSuccess }: PropsType) => {
-  const methods = useForm<CreateGroupSchema>({
-    defaultValues: createGroupDefaultValue,
-    resolver: zodResolver(createGroupSchema),
+const UpdateGroupForm = ({ group, onSuccess }: PropsType) => {
+  const { mutate } = useUpdateGroup({ groupId: group.id, successCallback: onSuccess });
+
+  const methods = useForm<UpdateGroupSchema>({
+    defaultValues: genertateUpdateGroupValue(group),
+    resolver: zodResolver(updateGroupSchema),
   });
 
-  const { mutate } = useCreateGroup(onSuccess);
-
-  const handleSubmit = methods.handleSubmit(data => {
+  const handleValid = (data: UpdateGroupSchema) => {
     mutate(data);
-  });
+  };
+
+  const handleInvalid = (error: FieldErrors<UpdateGroupSchema>) => {
+    if (error.id) {
+      toast.error(error.id.message);
+    }
+  };
+
+  const handleSubmit = methods.handleSubmit(handleValid, handleInvalid);
 
   return (
     <Form {...methods}>
@@ -38,4 +49,4 @@ const CreateGroupForm = ({ onSuccess }: PropsType) => {
     </Form>
   );
 };
-export default CreateGroupForm;
+export default UpdateGroupForm;

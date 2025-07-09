@@ -1,4 +1,5 @@
 export interface GroupDto {
+  id: string;
   groupCode: string;
   groupName: string;
   description: string;
@@ -6,6 +7,7 @@ export interface GroupDto {
 }
 
 export interface Group {
+  id: string;
   groupCode: string;
   groupName: string;
   description: string;

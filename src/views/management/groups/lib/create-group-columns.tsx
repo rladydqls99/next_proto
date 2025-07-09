@@ -2,6 +2,10 @@ import { ColumnDef } from "@tanstack/react-table";
 
 import { Group } from "@/domains/groups";
 
+import { DestructiveButton } from "@/shared";
+
+import UpdateGroupDialogWithButton from "../ui/update-group-dialog-with-button";
+
 export const createGroupColumns = () => {
   const columns: ColumnDef<Group>[] = [
     {
@@ -28,6 +32,15 @@ export const createGroupColumns = () => {
       accessorKey: "memberCount",
       cell: ({ row }) => (
         <span className="block w-full text-center">{row.original.memberCount} 명</span>
+      ),
+    },
+    {
+      header: "관리",
+      cell: ({ row }) => (
+        <div className="flex justify-center gap-1">
+          <UpdateGroupDialogWithButton group={row.original} />
+          <DestructiveButton size="xs">삭제</DestructiveButton>
+        </div>
       ),
     },
   ];

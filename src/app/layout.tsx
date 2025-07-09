@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
+import { Toaster } from "@/shared";
+
 import "./styles/globals.css";
+
 import MswProvider from "./providers/msw-provider";
 import QueryClientProvider from "./providers/query-client-provider";
 import { pretendard } from "./styles/font";
@@ -19,7 +22,10 @@ const RootLayout = ({
     <html lang="ko" className={`${pretendard.variable} antialiased`}>
       <body>
         <MswProvider>
-          <QueryClientProvider>{children}</QueryClientProvider>
+          <QueryClientProvider>
+            {children}
+            <Toaster />
+          </QueryClientProvider>
         </MswProvider>
       </body>
     </html>
