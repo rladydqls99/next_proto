@@ -36,4 +36,5 @@ const Input = ({ size = "md", rounded = "md", className, disabled, ...props }: P
 
   return <input {...props} className={inputClassName} disabled={disabled} />;
 };
+
 export { Input };
