@@ -2,8 +2,7 @@ import { ColumnDef } from "@tanstack/react-table";
 
 import { Group } from "@/domains/groups";
 
-import { DestructiveButton } from "@/shared";
-
+import DeleteGroupConfirmWithButton from "../ui/delete-group-comfirm-with-button";
 import UpdateGroupDialogWithButton from "../ui/update-group-dialog-with-button";
 
 export const createGroupColumns = () => {
@@ -39,7 +38,7 @@ export const createGroupColumns = () => {
       cell: ({ row }) => (
         <div className="flex justify-center gap-1">
           <UpdateGroupDialogWithButton group={row.original} />
-          <DestructiveButton size="xs">삭제</DestructiveButton>
+          <DeleteGroupConfirmWithButton group={row.original} />
         </div>
       ),
     },

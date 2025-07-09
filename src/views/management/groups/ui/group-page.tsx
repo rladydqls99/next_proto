@@ -1,19 +1,17 @@
 "use client";
 
-import { useState } from "react";
-
 import { useGetGroups } from "@/domains/groups";
 
-import { DestructiveButton, Input, SecondaryButton, Table } from "@/shared";
+import { DestructiveButton, Input, SecondaryButton, Table, useDebounceInput } from "@/shared";
 
 import { useGroupTable } from "../lib/use-group-table";
 
 import CreateGroupDialogWithButton from "./create-group-dialog-with-button";
 
 const GroupPage = () => {
-  const [search, setSearch] = useState("");
+  const { value, visibleValue, handleChange } = useDebounceInput();
 
-  const { data: groups } = useGetGroups(search);
+  const { data: groups } = useGetGroups(value);
   const table = useGroupTable(groups || []);
 
   return (
@@ -25,8 +23,8 @@ const GroupPage = () => {
           <DestructiveButton size="sm">일괄 등록</DestructiveButton>
         </div>
         <Input
-          value={search}
-          onChange={e => setSearch(e.target.value)}
+          value={visibleValue}
+          onChange={handleChange}
           placeholder="검색어를 입력해주세요."
           className="w-full max-w-200"
         />

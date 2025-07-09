@@ -3,6 +3,7 @@ export const ENDPOINT = {
     LIST: `/api/groups`,
     CREATE: `/api/group`,
     UPDATE: (groupId: string) => `/api/group/${groupId}`,
+    DELETE: (groupId: string) => `/api/group/${groupId}`,
   },
 
   GROUP_MEMBER: {

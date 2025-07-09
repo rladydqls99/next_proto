@@ -11,6 +11,7 @@ export { cn } from "./lib/cn";
 export { getNavItemByUrl } from "./lib/navigation";
 export type { NavItem, NavItemInfo } from "./lib/navigation";
 export { useToggle } from "./lib/use-toggle";
+export { useDebounceInput } from "./lib/use-debounce-input";
 
 // model -------------------------------------------------------------
 export type { YesOrNo, ResponseType } from "./model/common-type";
@@ -26,3 +27,4 @@ export { RHFInput, RHFTextarea } from "./ui/rhf";
 export * from "./ui/sheet";
 export * from "./ui/form";
 export * from "./ui/sonner";
+export * from "./ui/dialog";

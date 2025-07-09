@@ -49,3 +49,18 @@ export const apiUpdateGroup = async (group: UpdateGroupSchema) => {
     throw error;
   }
 };
+
+export const apiDeleteGroup = async (groupId: string) => {
+  try {
+    const res = await apiClient.delete<ResponseType<Group>>(ENDPOINT.GROUP.DELETE(groupId));
+
+    if (!res.data.success) {
+      throw new Error(res.data.error?.message || "에러 발생");
+    }
+
+    return res.data.data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};

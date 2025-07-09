@@ -5,6 +5,7 @@ export { apiGetGroupList, apiCreateGroup } from "./api/groups-api";
 export { useGetGroups } from "./lib/use-get-groups";
 export { useCreateGroup } from "./lib/use-create-group";
 export { useUpdateGroup } from "./lib/use-update-group";
+export { useDeleteGroup } from "./lib/use-delete-group";
 
 // model -------------------------------------------------------------
 export type { GroupDto, Group } from "./model/groups-types";

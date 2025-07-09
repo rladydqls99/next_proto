@@ -57,6 +57,22 @@ export const handlers = [
       error: null,
     });
   }),
+
+  http.delete(`${BASE_URL}/api/group/:groupId`, async ({ request }) => {
+    const groupId = request.url.split("/").pop();
+
+    const deletedGroupIndex = groupData.findIndex(item => item.id === groupId);
+
+    if (deletedGroupIndex !== -1) {
+      groupData.splice(deletedGroupIndex, 1);
+    }
+
+    return HttpResponse.json({
+      success: true,
+      data: [],
+      error: null,
+    });
+  }),
 ];
 
 const groupData: Group[] = [
