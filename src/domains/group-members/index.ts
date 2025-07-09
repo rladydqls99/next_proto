@@ -1,1 +1,1 @@
-export { type GroupMemberDto, type GroupMember } from "./model/group-members-type";
+export * from "./model/group-members-type";
