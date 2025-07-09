@@ -1,6 +1,6 @@
 import { getCoreRowModel, useReactTable } from "@tanstack/react-table";
 
-import { Group } from "../model/groups-types";
+import { Group } from "@/domains/groups";
 
 import { createGroupColumns } from "./create-group-columns";
 

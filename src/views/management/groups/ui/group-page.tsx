@@ -2,22 +2,28 @@
 
 import { useState } from "react";
 
-import { useGetGroupList, useGroupTable } from "@/domains/groups";
+import { useGetGroups } from "@/domains/groups";
 
-import { Input, Table } from "@/shared";
+import { DestructiveButton, Input, SecondaryButton, Table } from "@/shared";
 
-import GroupTableActions from "./group-table-actions";
+import { useGroupTable } from "../lib/use-group-table";
+
+import CreateGroupDialogWithButton from "./create-group-dialog-with-button";
 
 const GroupPage = () => {
   const [search, setSearch] = useState("");
 
-  const { data } = useGetGroupList(search);
-  const table = useGroupTable(data || []);
+  const { data: groups } = useGetGroups(search);
+  const table = useGroupTable(groups || []);
 
   return (
     <div className="mt-4 flex flex-col gap-4 rounded-lg bg-white p-4">
       <div className="flex justify-between">
-        <GroupTableActions />
+        <div className="flex gap-2">
+          <CreateGroupDialogWithButton />
+          <SecondaryButton size="sm">Excel</SecondaryButton>
+          <DestructiveButton size="sm">일괄 등록</DestructiveButton>
+        </div>
         <Input
           value={search}
           onChange={e => setSearch(e.target.value)}

@@ -2,8 +2,7 @@
 export { apiGetGroupList, apiCreateGroup } from "./api/groups-api";
 
 // lib -------------------------------------------------------------
-export { useGetGroupList } from "./lib/use-get-group-list";
-export { useGroupTable } from "./lib/use-group-table";
+export { useGetGroups } from "./lib/use-get-groups";
 export { useCreateGroup } from "./lib/use-create-group";
 
 // model -------------------------------------------------------------

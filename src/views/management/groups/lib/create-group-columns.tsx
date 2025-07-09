@@ -1,6 +1,6 @@
 import { ColumnDef } from "@tanstack/react-table";
 
-import { Group } from "../model/groups-types";
+import { Group } from "@/domains/groups";
 
 export const createGroupColumns = () => {
   const columns: ColumnDef<Group>[] = [
