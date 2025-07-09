@@ -2,15 +2,15 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { ENDPOINT } from "@/shared";
 
-import { apiCreateGroupMember } from "../api/group-member-api";
-import { CreateGroupMemberSchema } from "../model/group-member-validation";
+import { apiUpdateGroupMember } from "../api/group-member-api";
+import { UpdateGroupMemberSchema } from "../model/group-member-validation";
 
-export const useCreateGroupMember = () => {
+export const useUpdateGroupMember = (memberId: string) => {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationKey: [ENDPOINT.GROUP_MEMBER.CREATE],
-    mutationFn: (data: CreateGroupMemberSchema) => apiCreateGroupMember(data),
+    mutationKey: [ENDPOINT.GROUP_MEMBER.UPDATE(memberId)],
+    mutationFn: (data: UpdateGroupMemberSchema) => apiUpdateGroupMember(data),
 
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: [ENDPOINT.GROUP_MEMBER.LIST] });

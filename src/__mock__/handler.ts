@@ -1,7 +1,11 @@
 import { http, HttpResponse } from "msw";
 
 import { Group } from "@/domains/group";
-import { GroupMemberDto, GroupMemberSchema } from "@/domains/group-member";
+import {
+  GroupMemberDto,
+  CreateGroupMemberSchema,
+  UpdateGroupMemberSchema,
+} from "@/domains/group-member";
 
 import { ENDPOINT } from "@/shared";
 
@@ -91,7 +95,7 @@ export const handlers = [
   }),
 
   http.post(`${BASE_URL}${ENDPOINT.GROUP_MEMBER.CREATE}`, async ({ request }) => {
-    const groupMember = (await request.json()) as GroupMemberSchema;
+    const groupMember = (await request.json()) as CreateGroupMemberSchema;
 
     const newGroupMember = {
       ...groupMember,
@@ -106,6 +110,41 @@ export const handlers = [
     return HttpResponse.json({
       success: true,
       data: newGroupMember,
+      error: null,
+    });
+  }),
+
+  http.put(`${BASE_URL}/api/group-member/:groupMemberId`, async ({ request }) => {
+    const groupMember = (await request.json()) as UpdateGroupMemberSchema;
+
+    const updatedGroupMemberIndex = groupMemberData.findIndex(item => item.id === groupMember.id);
+
+    if (updatedGroupMemberIndex !== -1) {
+      groupMemberData[updatedGroupMemberIndex] = {
+        ...groupMemberData[updatedGroupMemberIndex],
+        ...groupMember,
+      };
+    }
+
+    return HttpResponse.json({
+      success: true,
+      data: groupMemberData[updatedGroupMemberIndex],
+      error: null,
+    });
+  }),
+
+  http.delete(`${BASE_URL}/api/group-member/:groupMemberId`, async ({ request }) => {
+    const groupMemberId = request.url.split("/").pop();
+
+    const deletedGroupMemberIndex = groupMemberData.findIndex(item => item.id === groupMemberId);
+
+    if (deletedGroupMemberIndex !== -1) {
+      groupMemberData.splice(deletedGroupMemberIndex, 1);
+    }
+
+    return HttpResponse.json({
+      success: true,
+      data: [],
       error: null,
     });
   }),

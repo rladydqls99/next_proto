@@ -24,7 +24,7 @@ const CreateGroupMemberWithButton = () => {
           <SheetTitle>회원 등록</SheetTitle>
           <SheetDescription>회원을 등록하기 위해서는 아래 정보를 입력해주세요.</SheetDescription>
         </SheetHeader>
-        <CreateGroupMemberForm onSuccess={toggle} />
+        <CreateGroupMemberForm />
       </SheetContent>
     </Sheet>
   );

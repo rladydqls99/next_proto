@@ -3,23 +3,20 @@ import { useForm } from "react-hook-form";
 
 import {
   groupMemberDefaultValue,
-  groupMemberSchema,
-  GroupMemberSchema,
+  createGroupMemberSchema,
+  CreateGroupMemberSchema,
   useCreateGroupMember,
 } from "@/domains/group-member";
 
-import { Form, PrimaryButton, RHFInput, RHFSwitch } from "@/shared";
+import { DialogClose, Form, PrimaryButton, RHFInput, RHFSwitch } from "@/shared";
 
-type PropsType = {
-  onSuccess: () => void;
-};
-const CreateGroupMemberForm = ({ onSuccess }: PropsType) => {
-  const methods = useForm<GroupMemberSchema>({
+const CreateGroupMemberForm = () => {
+  const methods = useForm<CreateGroupMemberSchema>({
     defaultValues: groupMemberDefaultValue,
-    resolver: zodResolver(groupMemberSchema),
+    resolver: zodResolver(createGroupMemberSchema),
   });
 
-  const { mutate } = useCreateGroupMember(onSuccess);
+  const { mutate } = useCreateGroupMember();
 
   const handleSubmit = methods.handleSubmit(data => {
     mutate(data);
@@ -33,9 +30,11 @@ const CreateGroupMemberForm = ({ onSuccess }: PropsType) => {
         <RHFInput name="groupCode" label="그룹 코드" placeholder="그룹 코드를 입력해주세요." />
         <RHFInput name="telNo" label="전화번호" placeholder="전화번호를 입력해주세요." />
         <RHFSwitch name="useYn" label="사용 여부" />
-        <PrimaryButton size="sm" type="submit" className="w-full">
-          등록
-        </PrimaryButton>
+        <DialogClose asChild>
+          <PrimaryButton size="sm" type="submit" className="w-full">
+            등록
+          </PrimaryButton>
+        </DialogClose>
       </form>
     </Form>
   );

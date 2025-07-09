@@ -2,6 +2,9 @@ import { ColumnDef } from "@tanstack/react-table";
 
 import { GroupMember } from "@/domains/group-member";
 
+import DeleteGroupMemberConfirmWithButton from "../ui/delete-group-member-confirm-with-button";
+import UpdateGroupMemberDrawerWithButton from "../ui/update-group-member-drawer-with-button";
+
 export const createGroupMemberColumns = () => {
   const columns: ColumnDef<GroupMember>[] = [
     {
@@ -54,6 +57,15 @@ export const createGroupMemberColumns = () => {
         <span className="block w-full text-center">
           {row.original.createdAt.toLocaleDateString()}
         </span>
+      ),
+    },
+    {
+      header: "관리",
+      cell: ({ row }) => (
+        <div className="flex justify-center gap-1">
+          <UpdateGroupMemberDrawerWithButton groupMember={row.original} />
+          <DeleteGroupMemberConfirmWithButton groupMember={row.original} />
+        </div>
       ),
     },
   ];

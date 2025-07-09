@@ -72,7 +72,7 @@ const RHFSwitch = ({ name, className, label }: CommonPropsType) => {
               {...field}
               className={className}
               checked={field.value === "Y"}
-              onCheckedChange={field.onChange}
+              onCheckedChange={value => field.onChange(value ? "Y" : "N")}
             />
           </FormControl>
           <FormMessage />

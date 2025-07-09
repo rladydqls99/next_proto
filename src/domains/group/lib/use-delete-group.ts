@@ -4,12 +4,12 @@ import { ENDPOINT } from "@/shared";
 
 import { apiDeleteGroup } from "../api/group-api";
 
-export const useDeleteGroup = (groupId: string) => {
+export const useDeleteGroup = () => {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationKey: [ENDPOINT.GROUP.DELETE(groupId)],
-    mutationFn: apiDeleteGroup,
+    mutationKey: [ENDPOINT.GROUP.DELETE(":groupId")],
+    mutationFn: (groupId: string) => apiDeleteGroup(groupId),
 
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: [ENDPOINT.GROUP.LIST] });

@@ -1,8 +1,8 @@
-import { Group, useDeleteGroup } from "@/domains/group";
+import { Group } from "@/domains/group";
 
-import { DestructiveButton, DialogClose, PrimaryButton } from "@/shared";
 import {
   Dialog,
+  DestructiveButton,
   DialogContent,
   DialogDescription,
   DialogHeader,
@@ -10,16 +10,13 @@ import {
   DialogTrigger,
 } from "@/shared";
 
+import DeleteGroupActions from "./delete-group-actions";
+
 type PropsType = {
   group: Group;
 };
+
 const DeleteGroupConfirmWithButton = ({ group }: PropsType) => {
-  const { mutate } = useDeleteGroup(group.id);
-
-  const handleDelete = () => {
-    mutate(group.id);
-  };
-
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -30,16 +27,7 @@ const DeleteGroupConfirmWithButton = ({ group }: PropsType) => {
           <DialogTitle>그룹 삭제</DialogTitle>
           <DialogDescription>그룹을 삭제하시겠습니까?</DialogDescription>
         </DialogHeader>
-        <div className="flex justify-end gap-2">
-          <DialogClose asChild>
-            <PrimaryButton size="sm">취소</PrimaryButton>
-          </DialogClose>
-          <DialogClose asChild>
-            <DestructiveButton onClick={handleDelete} size="sm">
-              삭제
-            </DestructiveButton>
-          </DialogClose>
-        </div>
+        <DeleteGroupActions group={group} />
       </DialogContent>
     </Dialog>
   );

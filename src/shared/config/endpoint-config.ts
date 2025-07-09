@@ -9,5 +9,7 @@ export const ENDPOINT = {
   GROUP_MEMBER: {
     LIST: `/api/group-members`,
     CREATE: `/api/group-member`,
+    UPDATE: (groupMemberId: string) => `/api/group-member/${groupMemberId}`,
+    DELETE: (groupMemberId: string) => `/api/group-member/${groupMemberId}`,
   },
 };
