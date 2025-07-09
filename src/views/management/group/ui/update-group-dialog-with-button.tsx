@@ -1,4 +1,4 @@
-import { Group } from "@/domains/groups";
+import { Group } from "@/domains/group";
 
 import {
   PrimaryButton,

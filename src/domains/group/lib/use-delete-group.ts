@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { ENDPOINT } from "@/shared";
 
-import { apiDeleteGroup } from "../api/groups-api";
+import { apiDeleteGroup } from "../api/group-api";
 
 export const useDeleteGroup = (groupId: string) => {
   const queryClient = useQueryClient();

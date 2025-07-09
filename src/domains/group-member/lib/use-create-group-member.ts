@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { ENDPOINT } from "@/shared";
 
-import { apiCreateGroupMember } from "../api/group-members-api";
+import { apiCreateGroupMember } from "../api/group-member-api";
 import { GroupMemberSchema } from "../model/group-member-validation";
 
 export const useCreateGroupMember = (successCallback: () => void) => {

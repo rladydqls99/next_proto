@@ -1,6 +1,6 @@
 "use client";
 
-import { useGetGroups } from "@/domains/groups";
+import { useGetGroups } from "@/domains/group";
 
 import {
   DestructiveButton,

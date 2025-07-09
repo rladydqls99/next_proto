@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { Group } from "./groups-types";
+import { Group } from "./group-types";
 
 // create --------------------------------------------------------------
 export const createGroupSchema = z.object({

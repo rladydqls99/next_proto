@@ -1,4 +1,4 @@
-import { Group, useDeleteGroup } from "@/domains/groups";
+import { Group, useDeleteGroup } from "@/domains/group";
 
 import { DestructiveButton, DialogClose, PrimaryButton } from "@/shared";
 import {

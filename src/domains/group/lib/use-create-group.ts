@@ -2,8 +2,8 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { ENDPOINT } from "@/shared";
 
-import { apiCreateGroup } from "../api/groups-api";
-import { CreateGroupSchema } from "../model/groups-validation";
+import { apiCreateGroup } from "../api/group-api";
+import { CreateGroupSchema } from "../model/group-validation";
 
 export const useCreateGroup = (successCallback: () => void) => {
   const queryClient = useQueryClient();

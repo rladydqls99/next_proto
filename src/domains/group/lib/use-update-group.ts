@@ -2,8 +2,8 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 import { ENDPOINT } from "@/shared";
 
-import { apiUpdateGroup } from "../api/groups-api";
-import { UpdateGroupSchema } from "../model/groups-validation";
+import { apiUpdateGroup } from "../api/group-api";
+import { UpdateGroupSchema } from "../model/group-validation";
 
 type PropsType = {
   groupId: string;

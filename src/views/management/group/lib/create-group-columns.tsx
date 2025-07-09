@@ -1,6 +1,6 @@
 import { ColumnDef } from "@tanstack/react-table";
 
-import { Group } from "@/domains/groups";
+import { Group } from "@/domains/group";
 
 import DeleteGroupConfirmWithButton from "../ui/delete-group-comfirm-with-button";
 import UpdateGroupDialogWithButton from "../ui/update-group-dialog-with-button";

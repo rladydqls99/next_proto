@@ -21,9 +21,9 @@ export const navItems: NavItem[] = [
         href: `${ROUTE_PATH.MANAGEMENT}/group`,
       },
       {
-        key: `${ROUTE_PATH.MANAGEMENT}/group-members`,
+        key: `${ROUTE_PATH.MANAGEMENT}/group-member`,
         title: "그룹 회원",
-        href: `${ROUTE_PATH.MANAGEMENT}/group-members`,
+        href: `${ROUTE_PATH.MANAGEMENT}/group-member`,
       },
     ],
   },

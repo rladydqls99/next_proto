@@ -1,7 +1,7 @@
 import { apiClient, ENDPOINT, ResponseType } from "@/shared";
 
+import { GroupMember, GroupMemberDto, toGroupMember } from "../model/group-member-type";
 import { GroupMemberSchema } from "../model/group-member-validation";
-import { GroupMember, GroupMemberDto, toGroupMember } from "../model/group-members-type";
 
 export const apiGetGroupMemberList = async (search: string): Promise<GroupMember[]> => {
   try {

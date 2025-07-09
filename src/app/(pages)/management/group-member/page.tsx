@@ -3,7 +3,7 @@ import { dehydrate, HydrationBoundary, QueryClient } from "@tanstack/react-query
 import { PageHeader } from "@/widgets/headers";
 
 import { apiClient, ENDPOINT, getNavItemByUrl, navItems, ROUTE_PATH } from "@/shared";
-import { GroupMemberPage } from "@/views/management/group-members";
+import { GroupMemberPage } from "@/views/management/group-member";
 
 export const metadata = {
   title: "그룹 회원 관리",

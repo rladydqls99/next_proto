@@ -1,7 +1,7 @@
 import { apiClient, ENDPOINT, ResponseType } from "@/shared";
 
-import { Group } from "../model/groups-types";
-import { CreateGroupSchema, UpdateGroupSchema } from "../model/groups-validation";
+import { Group } from "../model/group-types";
+import { CreateGroupSchema, UpdateGroupSchema } from "../model/group-validation";
 
 export const apiGetGroupList = async (search: string) => {
   try {

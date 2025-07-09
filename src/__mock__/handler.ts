@@ -1,7 +1,7 @@
 import { http, HttpResponse } from "msw";
 
-import { GroupMemberDto, GroupMemberSchema } from "@/domains/group-members";
-import { Group } from "@/domains/groups";
+import { Group } from "@/domains/group";
+import { GroupMemberDto, GroupMemberSchema } from "@/domains/group-member";
 
 import { ENDPOINT } from "@/shared";
 

@@ -2,7 +2,7 @@ import { keepPreviousData, useQuery } from "@tanstack/react-query";
 
 import { ENDPOINT } from "@/shared";
 
-import { apiGetGroupMemberList } from "../api/group-members-api";
+import { apiGetGroupMemberList } from "../api/group-member-api";
 
 export const useGetGroupMembers = (search: string) => {
   return useQuery({

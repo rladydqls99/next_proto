@@ -8,7 +8,7 @@ import {
   updateGroupSchema,
   UpdateGroupSchema,
   useUpdateGroup,
-} from "@/domains/groups";
+} from "@/domains/group";
 
 import { Form, PrimaryButton, RHFInput, RHFTextarea } from "@/shared";
 

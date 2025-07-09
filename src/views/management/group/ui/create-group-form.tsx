@@ -6,7 +6,7 @@ import {
   createGroupSchema,
   CreateGroupSchema,
   useCreateGroup,
-} from "@/domains/groups";
+} from "@/domains/group";
 
 import { Form, PrimaryButton, RHFInput, RHFTextarea } from "@/shared";
 
