@@ -2,9 +2,8 @@ import { dehydrate, HydrationBoundary, QueryClient } from "@tanstack/react-query
 
 import { PageHeader } from "@/widgets/headers";
 
-import { GroupTable } from "@/domains/groups";
-
 import { apiClient, ENDPOINT, getNavItemByUrl, navItems, ROUTE_PATH } from "@/shared";
+import { GroupPage } from "@/views/management/groups";
 
 export const metadata = {
   title: "그룹 관리",
@@ -24,7 +23,7 @@ const GroupsPage = async () => {
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
       <PageHeader {...navItem} />
-      <GroupTable />
+      <GroupPage />
     </HydrationBoundary>
   );
 };
