@@ -2,9 +2,16 @@
 
 import { useGetGroups } from "@/domains/groups";
 
-import { DestructiveButton, Input, SecondaryButton, Table, useDebounceInput } from "@/shared";
+import {
+  DestructiveButton,
+  Input,
+  SecondaryButton,
+  Table,
+  useDebounceInput,
+  useTable,
+} from "@/shared";
 
-import { useGroupTable } from "../lib/use-group-table";
+import { createGroupColumns } from "../lib/create-group-columns";
 
 import CreateGroupDialogWithButton from "./create-group-dialog-with-button";
 
@@ -12,7 +19,8 @@ const GroupPage = () => {
   const { value, visibleValue, handleChange } = useDebounceInput();
 
   const { data: groups } = useGetGroups(value);
-  const table = useGroupTable(groups || []);
+  const columns = createGroupColumns();
+  const table = useTable({ columns, data: groups || [] });
 
   return (
     <div className="mt-4 flex flex-col gap-4 rounded-lg bg-white p-4">

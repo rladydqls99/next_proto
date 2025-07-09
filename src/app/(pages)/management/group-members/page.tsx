@@ -1,6 +1,9 @@
+import { dehydrate, HydrationBoundary, QueryClient } from "@tanstack/react-query";
+
 import { PageHeader } from "@/widgets/headers";
 
-import { getNavItemByUrl, navItems, ROUTE_PATH } from "@/shared";
+import { apiClient, ENDPOINT, getNavItemByUrl, navItems, ROUTE_PATH } from "@/shared";
+import { GroupMemberPage } from "@/views/management/group-members";
 
 export const metadata = {
   title: "그룹 회원 관리",
@@ -8,12 +11,20 @@ export const metadata = {
 };
 
 const GroupMembersPage = async () => {
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchQuery({
+    queryKey: [ENDPOINT.GROUP_MEMBER.LIST, ""],
+    queryFn: () => apiClient.get(ENDPOINT.GROUP_MEMBER.LIST),
+  });
+
   const navItem = getNavItemByUrl(`${ROUTE_PATH.MANAGEMENT}/group-members`, navItems);
 
   return (
-    <div>
+    <HydrationBoundary state={dehydrate(queryClient)}>
       <PageHeader {...navItem} />
-    </div>
+      <GroupMemberPage />
+    </HydrationBoundary>
   );
 };
 

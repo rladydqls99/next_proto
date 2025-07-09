@@ -7,6 +7,7 @@ export const ENDPOINT = {
   },
 
   GROUP_MEMBER: {
-    list: `/api/group-members`,
+    LIST: `/api/group-members`,
+    CREATE: `/api/group-member`,
   },
 };

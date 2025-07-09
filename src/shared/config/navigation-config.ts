@@ -16,9 +16,9 @@ export const navItems: NavItem[] = [
     disabled: false,
     children: [
       {
-        key: `${ROUTE_PATH.MANAGEMENT}/groups`,
+        key: `${ROUTE_PATH.MANAGEMENT}/group`,
         title: "그룹",
-        href: `${ROUTE_PATH.MANAGEMENT}/groups`,
+        href: `${ROUTE_PATH.MANAGEMENT}/group`,
       },
       {
         key: `${ROUTE_PATH.MANAGEMENT}/group-members`,
