@@ -2,7 +2,9 @@ import { dehydrate, HydrationBoundary, QueryClient } from "@tanstack/react-query
 
 import { PageHeader } from "@/widgets/headers";
 
-import { apiClient, ENDPOINT, getNavItemByUrl, navItems, ROUTE_PATH } from "@/shared";
+import { apiGetGroupMemberList } from "@/domains/group-member";
+
+import { ENDPOINT, getNavItemByUrl, navItems, ROUTE_PATH } from "@/shared";
 import { GroupMemberPage } from "@/views/management/group-member";
 
 export const metadata = {
@@ -15,7 +17,7 @@ const GroupMembersPage = async () => {
 
   await queryClient.prefetchQuery({
     queryKey: [ENDPOINT.GROUP_MEMBER.LIST, ""],
-    queryFn: () => apiClient.get(ENDPOINT.GROUP_MEMBER.LIST),
+    queryFn: () => apiGetGroupMemberList(""),
   });
 
   const navItem = getNavItemByUrl(`${ROUTE_PATH.MANAGEMENT}/group-members`, navItems);

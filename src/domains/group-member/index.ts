@@ -1,3 +1,5 @@
+export * from "./api/group-member-api";
+
 export * from "./model/group-member-validation";
 export * from "./model/group-member-type";
 
