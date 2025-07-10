@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
-import { useGetGroupSelectOptions } from "@/domains/group";
+import { Group, useGetGroups } from "@/domains/group";
 import {
   groupMemberDefaultValue,
   createGroupMemberSchema,
@@ -9,7 +9,7 @@ import {
   useCreateGroupMember,
 } from "@/domains/group-member";
 
-import { Form, PrimaryButton, RHFInput, RHFSelect, RHFSwitch } from "@/shared";
+import { Form, PrimaryButton, RHFInput, RHFSelect, RHFSwitch, useGetSelectOptions } from "@/shared";
 
 type PropsType = {
   onSuccess: () => void;
@@ -17,7 +17,12 @@ type PropsType = {
 const CreateGroupMemberForm = ({ onSuccess }: PropsType) => {
   const { mutate } = useCreateGroupMember();
 
-  const groupOptions = useGetGroupSelectOptions();
+  const { data: groupList = [] } = useGetGroups("");
+  const groupOptions = useGetSelectOptions<Group>({
+    list: groupList,
+    label: "groupName",
+    value: "groupCode",
+  });
 
   const methods = useForm<CreateGroupMemberSchema>({
     defaultValues: groupMemberDefaultValue,

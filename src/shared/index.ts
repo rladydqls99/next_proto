@@ -12,6 +12,7 @@ export * from "./lib/navigation";
 export * from "./lib/use-toggle";
 export * from "./lib/use-debounce-input";
 export * from "./lib/use-table";
+export * from "./lib/use-get-select-options";
 
 // model -------------------------------------------------------------
 export * from "./model/common-type";

@@ -2,7 +2,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { FieldErrors, useForm } from "react-hook-form";
 import { toast } from "sonner";
 
-import { useGetGroupSelectOptions } from "@/domains/group";
+import { Group, useGetGroups } from "@/domains/group";
 import {
   generateUpdateGroupMemberValue,
   GroupMember,
@@ -11,7 +11,7 @@ import {
   useUpdateGroupMember,
 } from "@/domains/group-member";
 
-import { Form, PrimaryButton, RHFInput, RHFSelect, RHFSwitch } from "@/shared";
+import { Form, PrimaryButton, RHFInput, RHFSelect, RHFSwitch, useGetSelectOptions } from "@/shared";
 
 type PropsType = {
   groupMember: GroupMember;
@@ -20,7 +20,12 @@ type PropsType = {
 const UpdateGroupMemberForm = ({ groupMember, onSuccess }: PropsType) => {
   const { mutate } = useUpdateGroupMember(groupMember.memberId);
 
-  const groupOptions = useGetGroupSelectOptions();
+  const { data: groupList = [] } = useGetGroups("");
+  const groupOptions = useGetSelectOptions<Group>({
+    list: groupList,
+    label: "groupName",
+    value: "groupCode",
+  });
 
   const methods = useForm<UpdateGroupMemberSchema>({
     defaultValues: generateUpdateGroupMemberValue(groupMember),
