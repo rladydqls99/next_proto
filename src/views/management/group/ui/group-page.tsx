@@ -1,6 +1,6 @@
 "use client";
 
-import { useGetGroups } from "@/domains/group";
+import { useGetGroupList } from "@/domains/group";
 
 import { Input, Table, useDebounceInput, useTable } from "@/shared";
 
@@ -11,7 +11,7 @@ import CreateGroupDialogWithButton from "./create-group-dialog-with-button";
 const GroupPage = () => {
   const { value, visibleValue, handleChange } = useDebounceInput();
 
-  const { data: groups } = useGetGroups(value);
+  const { data: groups } = useGetGroupList(value);
   const columns = createGroupColumns();
   const table = useTable({ columns, data: groups || [] });
 

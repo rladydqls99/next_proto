@@ -10,7 +10,6 @@ export const useDebounceInput = () => {
   const debouncedSetValue = useMemo(() => debounce(setValue, 500), [setValue]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log("handleChange");
     const newValue = e.target.value;
 
     setVisibleValue(newValue);

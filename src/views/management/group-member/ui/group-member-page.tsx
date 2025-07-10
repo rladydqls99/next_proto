@@ -1,6 +1,6 @@
 "use client";
 
-import { useGetGroupMembers } from "@/domains/group-member";
+import { useGetGroupMemberList } from "@/domains/group-member";
 
 import { Input, Table, useDebounceInput, useTable } from "@/shared";
 
@@ -11,7 +11,7 @@ import CreateGroupMemberDrawerWithButton from "./create-group-member-drawer-with
 const GroupMemberPage = () => {
   const { value, visibleValue, handleChange } = useDebounceInput();
 
-  const { data: groupMembers } = useGetGroupMembers(value);
+  const { data: groupMembers } = useGetGroupMemberList(value);
   const columns = createGroupMemberColumns();
 
   const table = useTable({ columns, data: groupMembers || [] });

@@ -3,6 +3,7 @@ type PropsType<T> = {
   label: keyof T;
   value: keyof T;
 };
+
 export const useGetSelectOptions = <T>({ list, label, value }: PropsType<T>) => {
   return (
     list?.map(item => ({

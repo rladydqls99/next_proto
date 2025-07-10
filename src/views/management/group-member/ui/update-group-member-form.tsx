@@ -2,7 +2,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { FieldErrors, useForm } from "react-hook-form";
 import { toast } from "sonner";
 
-import { Group, useGetGroups } from "@/domains/group";
+import { Group, useGetGroupList } from "@/domains/group";
 import {
   generateUpdateGroupMemberValue,
   GroupMember,
@@ -20,7 +20,7 @@ type PropsType = {
 const UpdateGroupMemberForm = ({ groupMember, onSuccess }: PropsType) => {
   const { mutate } = useUpdateGroupMember(groupMember.memberId);
 
-  const { data: groupList = [] } = useGetGroups("");
+  const { data: groupList = [] } = useGetGroupList("");
   const groupOptions = useGetSelectOptions<Group>({
     list: groupList,
     label: "groupName",

@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
-import { Group, useGetGroups } from "@/domains/group";
+import { Group, useGetGroupList } from "@/domains/group";
 import {
   groupMemberDefaultValue,
   createGroupMemberSchema,
@@ -17,7 +17,7 @@ type PropsType = {
 const CreateGroupMemberForm = ({ onSuccess }: PropsType) => {
   const { mutate } = useCreateGroupMember();
 
-  const { data: groupList = [] } = useGetGroups("");
+  const { data: groupList = [] } = useGetGroupList("");
   const groupOptions = useGetSelectOptions<Group>({
     list: groupList,
     label: "groupName",
