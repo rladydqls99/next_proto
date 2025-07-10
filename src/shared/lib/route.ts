@@ -1,24 +1,6 @@
-import { LucideIcon } from "lucide-react";
+import { NavItem } from "../config/route-config";
 
-export type NavItem = {
-  key: string;
-  title: string;
-  icon: LucideIcon;
-  disabled: boolean;
-  children: {
-    key: string;
-    title: string;
-    href: string;
-  }[];
-};
-
-export type NavItemInfo = {
-  category: string;
-  page: string;
-  Icon: LucideIcon | null;
-};
-
-export const getNavItemByUrl = (url: string, navItems: NavItem[]): NavItemInfo => {
+export const getNavItemByUrl = (url: string, navItems: NavItem[]) => {
   for (const navItem of navItems) {
     if (navItem.children) {
       for (const child of navItem.children) {

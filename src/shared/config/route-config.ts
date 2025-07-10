@@ -1,6 +1,16 @@
-import { MonitorSmartphoneIcon, NewspaperIcon, ScanSearchIcon } from "lucide-react";
+import { LucideIcon, MonitorSmartphoneIcon, NewspaperIcon, ScanSearchIcon } from "lucide-react";
 
-import { NavItem } from "@/shared";
+export type NavItem = {
+  key: string;
+  title: string;
+  icon: LucideIcon;
+  disabled: boolean;
+  children: {
+    key: string;
+    title: string;
+    href: string;
+  }[];
+};
 
 export const ROUTE_PATH = {
   MANAGEMENT: {
