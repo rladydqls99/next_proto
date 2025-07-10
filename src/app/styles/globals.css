@@ -7,9 +7,9 @@
   --background: #ffffff;
   --foreground: #171717;
 
-  --primary: oklch(62.3% 0.214 259.815);
-  --primary-hover: oklch(54.6% 0.245 262.881);
-  --primary-active: oklch(48.8% 0.243 264.376);
+  --primary: oklch(45.7% 0.24 277.023);
+  --primary-hover: oklch(39.8% 0.195 277.366);
+  --primary-active: oklch(35.9% 0.144 278.697);
   --primary-foreground: oklch(96.8% 0.007 247.896);
   --secondary: oklch(60.6% 0.25 292.717);
   --secondary-hover: oklch(54.1% 0.281 293.009);

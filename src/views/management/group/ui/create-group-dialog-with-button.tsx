@@ -17,7 +17,9 @@ const CreateGroupDialogWithButton = () => {
   return (
     <Sheet open={isOpen} onOpenChange={toggle}>
       <SheetTrigger asChild>
-        <PrimaryButton size="sm">등록</PrimaryButton>
+        <PrimaryButton className="px-15" size="sm">
+          등록
+        </PrimaryButton>
       </SheetTrigger>
       <SheetContent className="min-w-xl">
         <SheetHeader>

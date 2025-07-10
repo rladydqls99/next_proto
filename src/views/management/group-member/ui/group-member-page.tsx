@@ -2,14 +2,7 @@
 
 import { useGetGroupMembers } from "@/domains/group-member";
 
-import {
-  DestructiveButton,
-  Input,
-  SecondaryButton,
-  Table,
-  useDebounceInput,
-  useTable,
-} from "@/shared";
+import { Input, Table, useDebounceInput, useTable } from "@/shared";
 
 import { createGroupMemberColumns } from "../lib/create-group-member-columns";
 
@@ -26,11 +19,8 @@ const GroupMemberPage = () => {
   return (
     <div className="mt-4 flex flex-col gap-4 rounded-lg bg-white p-4">
       <div className="flex justify-between">
-        <div className="flex gap-2">
-          <CreateGroupMemberDrawerWithButton />
-          <SecondaryButton size="sm">Excel</SecondaryButton>
-          <DestructiveButton size="sm">일괄 등록</DestructiveButton>
-        </div>
+        <CreateGroupMemberDrawerWithButton />
+
         <Input
           value={visibleValue}
           onChange={handleChange}

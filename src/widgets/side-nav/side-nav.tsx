@@ -9,7 +9,7 @@ const SideNav = () => {
   return (
     <Accordion.Root
       type="multiple"
-      className="min-w-54 space-y-5 bg-indigo-900 px-5 py-10 text-white"
+      className="bg-primary-hover min-w-54 space-y-5 px-5 py-10 text-white"
     >
       {navItems.map(item => (
         <Accordion.Item key={item.key} value={item.key}>

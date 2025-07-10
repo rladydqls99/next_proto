@@ -2,14 +2,7 @@
 
 import { useGetGroups } from "@/domains/group";
 
-import {
-  DestructiveButton,
-  Input,
-  SecondaryButton,
-  Table,
-  useDebounceInput,
-  useTable,
-} from "@/shared";
+import { Input, Table, useDebounceInput, useTable } from "@/shared";
 
 import { createGroupColumns } from "../lib/create-group-columns";
 
@@ -25,11 +18,8 @@ const GroupPage = () => {
   return (
     <div className="mt-4 flex flex-col gap-4 rounded-lg bg-white p-4">
       <div className="flex justify-between">
-        <div className="flex gap-2">
-          <CreateGroupDialogWithButton />
-          <SecondaryButton size="sm">Excel</SecondaryButton>
-          <DestructiveButton size="sm">일괄 등록</DestructiveButton>
-        </div>
+        <CreateGroupDialogWithButton />
+
         <Input
           value={visibleValue}
           onChange={handleChange}
