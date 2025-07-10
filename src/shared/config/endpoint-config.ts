@@ -12,4 +12,13 @@ export const ENDPOINT = {
     UPDATE: (groupMemberId: string) => `/api/group-member/${groupMemberId}`,
     DELETE: (groupMemberId: string) => `/api/group-member/${groupMemberId}`,
   },
+
+  COMMON_CODE: {
+    GROUP: {
+      LIST: `/api/common-code-groups`,
+    },
+    CODE: {
+      LIST: (groupKey: string) => `/api/common-codes/${groupKey}`,
+    },
+  },
 };
