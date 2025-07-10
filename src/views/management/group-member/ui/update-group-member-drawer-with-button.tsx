@@ -29,7 +29,7 @@ const UpdateGroupMemberDrawerWithButton = ({ groupMember }: PropsType) => {
           <SheetTitle>그룹 수정</SheetTitle>
           <SheetDescription>그룹을 수정하기 위해서는 아래 정보를 입력해주세요.</SheetDescription>
         </SheetHeader>
-        <UpdateGroupMemberForm groupMember={groupMember} />
+        <UpdateGroupMemberForm groupMember={groupMember} onSuccess={toggle} />
       </SheetContent>
     </Sheet>
   );

@@ -27,3 +27,4 @@ export * from "./ui/form";
 export * from "./ui/sonner";
 export * from "./ui/dialog";
 export * from "./ui/switch";
+export * from "./ui/select";
