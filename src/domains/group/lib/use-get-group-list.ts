@@ -4,7 +4,7 @@ import { ENDPOINT } from "@/shared";
 
 import { apiGetGroupList } from "../api/group-api";
 
-export const useGetGroups = (search: string) => {
+export const useGetGroupList = (search: string) => {
   return useQuery({
     queryKey: [ENDPOINT.GROUP.LIST, search],
     queryFn: () => apiGetGroupList(search),

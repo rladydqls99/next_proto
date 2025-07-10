@@ -2,7 +2,7 @@
 export * from "./api/group-api";
 
 // lib -------------------------------------------------------------
-export * from "./lib/use-get-group";
+export * from "./lib/use-get-group-list";
 export * from "./lib/use-create-group";
 export * from "./lib/use-update-group";
 export * from "./lib/use-delete-group";
