@@ -15,7 +15,9 @@ const DeleteGroupMemberActions = ({ groupMember }: PropsType) => {
   return (
     <div className="flex justify-end gap-2">
       <DialogClose asChild>
-        <PrimaryButton size="sm">취소</PrimaryButton>
+        <PrimaryButton size="sm" className="bg-gray-600 hover:bg-gray-700 active:bg-gray-800">
+          취소
+        </PrimaryButton>
       </DialogClose>
       <DialogClose asChild>
         <DestructiveButton onClick={handleDelete} size="sm">
