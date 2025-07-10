@@ -42,7 +42,7 @@ function importRestrictionRules() {
       {
         zones: [
           {
-            target: "./src/pages",
+            target: "./src/views",
             from: "./src/app",
             message: "pages 레이어는 app 레이어를 참조할 수 없습니다.",
           },
@@ -53,7 +53,7 @@ function importRestrictionRules() {
           },
           {
             target: "./src/widgets",
-            from: "./src/pages",
+            from: "./src/views",
             message: "widgets 레이어는 pages 레이어를 참조할 수 없습니다.",
           },
           {
@@ -63,7 +63,7 @@ function importRestrictionRules() {
           },
           {
             target: "./src/domains",
-            from: "./src/pages",
+            from: "./src/views",
             message: "domains 레이어는 pages 레이어를 참조할 수 없습니다.",
           },
           {
@@ -78,7 +78,7 @@ function importRestrictionRules() {
           },
           {
             target: "./src/shared",
-            from: "./src/pages",
+            from: "./src/views",
             message: "shared 레이어는 pages 레이어를 참조할 수 없습니다.",
           },
           {
@@ -107,7 +107,7 @@ function publicApiRestrictionRules() {
       {
         patterns: [
           {
-            group: ["@/shared/**", "@/domains/*/**", "@/widgets/*/**", "@/pages/*/**"],
+            group: ["@/shared/**", "@/domains/*/**", "@/widgets/*/**"],
             message: "index.ts를 통해 import하세요.",
           },
         ],
@@ -139,7 +139,7 @@ function importOrderRules() {
           },
           // pages 레이어
           {
-            pattern: "@/pages/**",
+            pattern: "@/views/**",
             group: "internal",
             position: "before",
           },

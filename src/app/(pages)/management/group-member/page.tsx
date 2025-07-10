@@ -1,11 +1,12 @@
 import { dehydrate, HydrationBoundary, QueryClient } from "@tanstack/react-query";
 
+import { GroupMemberPage } from "@/views/management/group-member";
+
 import { PageHeader } from "@/widgets/headers";
 
 import { apiGetGroupMemberList } from "@/domains/group-member";
 
 import { ENDPOINT, getNavItemByUrl, navItems, ROUTE_PATH } from "@/shared";
-import { GroupMemberPage } from "@/views/management/group-member";
 
 export const metadata = {
   title: "그룹 회원 관리",
