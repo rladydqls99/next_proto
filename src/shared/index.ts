@@ -2,13 +2,12 @@
 export * from "./api/http-client";
 
 // config -------------------------------------------------------------
-export * from "./config/navigation-config";
-export * from "./config/navigation-config";
+export * from "./config/route-config";
 export * from "./config/endpoint-config";
 
 // lib -------------------------------------------------------------
 export * from "./lib/cn";
-export * from "./lib/navigation";
+export * from "./lib/route";
 export * from "./lib/use-toggle";
 export * from "./lib/use-debounce-input";
 export * from "./lib/use-table";

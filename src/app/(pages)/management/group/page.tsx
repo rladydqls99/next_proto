@@ -21,7 +21,7 @@ const GroupsPage = async () => {
     queryFn: () => apiGetGroupList(""),
   });
 
-  const navItem = getNavItemByUrl(`${ROUTE_PATH.MANAGEMENT}/groups`, navItems);
+  const navItem = getNavItemByUrl(ROUTE_PATH.MANAGEMENT.GROUP, navItems);
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
